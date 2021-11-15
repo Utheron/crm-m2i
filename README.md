@@ -7,7 +7,7 @@
 
 ## ANGULAR
   ### **Module**
-  - Un module qui exporte un autre module rend siponible les imports de celui-ci
+  - Un module qui exporte un autre module rend disponible les imports de celui-ci
 
   ### NG-CONTENT
   - Principe de transclusion simple
