@@ -1,14 +1,26 @@
 <header>
+  <span (click)="toggle()">
+    <ng-container *ngIf="closed, then thenBlock, else elseBlock"></ng-container>
+  </span>
+  <ng-template #thenBlock>
+    <ng-content select=".tr-icon-open"></ng-content>
+  </ng-template>
+  <ng-template #elseBlock>
+    <ng-content select=".tr-icon-close"></ng-content>
+  </ng-template>
   <ng-content select=".tr-header"></ng-content>
 </header>
-<main>
-  <div>
+
+<div class="ui">
+  <nav [ngClass]="{'close-aside': closed}">
     <ng-content select=".tr-nav"></ng-content>
-  </div>
-  <div>
+  </nav>
+
+  <main>
     <p class="tr-content">Content</p>
-  </div>
+  </main>
+
   <footer>
     <ng-content select=".tr-footer"></ng-content>
   </footer>
-</main>
+</div>

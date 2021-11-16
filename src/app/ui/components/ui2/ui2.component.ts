@@ -3,13 +3,18 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-ui2',
   templateUrl: './ui2.component.html',
-  styleUrls: ['./ui2.component.scss']
+  styleUrls: ['./ui2.component.scss'],
 })
 export class Ui2Component implements OnInit {
+  public closed: boolean;
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor() {
+    this.closed = true;
   }
 
+  ngOnInit(): void {}
+
+  public toggle(): void {
+    this.closed = !this.closed;
+  }
 }
