@@ -34,6 +34,12 @@
 // Ne fonctionnera pas
 ```
 
+### ROUTER
+
+- Basic routes
+- Lazy loading
+- Preloading strategy
+
 ### NOTES
 
 - Le module icons permet de centraliser toutes les icones au même endroit et limiter les imports
