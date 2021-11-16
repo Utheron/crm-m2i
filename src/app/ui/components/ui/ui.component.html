@@ -1,6 +1,11 @@
 <header class="fixed-top d-flex align-items-center">
   <div (click)="toggle()">
-    <ng-content *ngIf="closed; else elseBlock" select=".tr-icon-open"></ng-content>
+    <ng-container *ngIf="closed; then thenBlock else elseBlock"></ng-container>
+
+    <ng-template #thenBlock>
+      <ng-content select=".tr-icon-open"></ng-content>
+    </ng-template>
+
     <ng-template #elseBlock>
       <ng-content select=".tr-icon-close"></ng-content>
     </ng-template>
