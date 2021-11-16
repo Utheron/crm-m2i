@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faEdit } from '@fortawesome/free-solid-svg-icons';
+import { faEdit, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-icon-edit',
@@ -7,7 +7,7 @@ import { faEdit } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./icon-edit.component.scss'],
 })
 export class IconEditComponent implements OnInit {
-  public myIcon = faEdit;
+  public myIcon: IconDefinition = faEdit;
 
   constructor() {}
 

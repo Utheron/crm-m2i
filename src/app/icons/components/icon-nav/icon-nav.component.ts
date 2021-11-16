@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+import {
+  faBars,
+  faTimes,
+  IconDefinition,
+} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-icon-nav',
@@ -7,7 +11,7 @@ import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./icon-nav.component.scss'],
 })
 export class IconNavComponent implements OnInit {
-  public myIcon = faBars;
+  public myIcon: IconDefinition = faBars;
   public toggled: boolean = false;
 
   constructor() {}
