@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-icon-nav',
@@ -8,8 +8,14 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 })
 export class IconNavComponent implements OnInit {
   public myIcon = faBars;
+  public toggled: boolean = false;
 
   constructor() {}
 
   ngOnInit(): void {}
+
+  public toggle(): void {
+    this.myIcon = this.toggled ? faBars : faTimes;
+    this.toggled = !this.toggled;
+  }
 }

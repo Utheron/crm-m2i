@@ -9,7 +9,7 @@ export class UiComponent implements OnInit {
   public closed: boolean;
 
   constructor() {
-    this.closed = false;
+    this.closed = true;
   }
 
   ngOnInit(): void {}
