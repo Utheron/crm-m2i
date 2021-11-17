@@ -5,15 +5,15 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class VersionService {
-  public number = new BehaviorSubject(0);
+  public number$ = new BehaviorSubject(0);
 
   constructor() {}
 
   public incrementVersion(): void {
-    this.number.next(this.number.value + 1);
+    this.number$.next(this.number$.value + 1);
   }
 
   public decrementVersion(): void {
-    this.number.next(this.number.value - 1);
+    this.number$.next(this.number$.value - 1);
   }
 }
