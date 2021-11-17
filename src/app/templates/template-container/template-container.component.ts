@@ -7,6 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class TemplateContainerComponent implements OnInit {
   @Input() public title!: string;
+
   constructor() {
     this.title = 'Ohhhhh le joli title';
   }
