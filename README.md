@@ -40,6 +40,68 @@
 - Lazy loading
 - Preloading strategy
 
+### OBSERVABLE, SUBJECT, BEHAVIORSUBJECT
+
+- Un `Observable` peut être de deux types: froid/unicast ou chaud/multicast
+- **Observable Froid** : observable qui lorsqu’on y souscrit, nous retourne un flux de données. Si il y a une modification du flux de données on devra unsubscribe() puis subscribe() à nouveau pour récupérer le flux modifié
+
+```js
+export class AppComponent {
+  private obs = new Observable((listXsubscribe) => {
+    listXsubscribe.next(Math.random());
+  });
+
+  constructor() {
+    this.obs.subscribe((data) => console.log(data));
+    this.obs.subscribe((data) => console.log(data));
+  }
+}
+```
+
+- **Observable Chaud** : Initialisation ou pas d’un flux de données et possibilité avec la méthode next de modifier le flux encore et encore tout en pouvant récupérer le flux modifié dans le subscribe()
+
+```js
+export class AppComponent {
+  private subject = new Subject();
+
+  constructor() {
+    this.subject.subscribe((data) => {
+      console.log(data);
+    });
+
+    this.subject.next(Math.random());
+
+    this.subject.subscribe((data) => {
+      console.log(data);
+    });
+
+    this.subject.next(Math.random());
+  }
+}
+```
+
+```js
+export class AppComponent {
+  private behavior = new BehaviorSubject(0);
+
+  constructor() {
+    this.behavior.subscribe((data) => console.log(data));
+    this.behavior.next(1);
+    this.behavior.subscribe((data) => console.log(data));
+    this.behavior.next(2);
+    this.behavior.next(Math.random());
+    this.behavior.subscribe((data) => console.log(data));
+    this.behavior.subscribe((data) => console.log(data));
+  }
+}
+```
+
 ### NOTES
 
 - Le module icons permet de centraliser toutes les icones au même endroit et limiter les imports
+
+### APPROFONDIR
+
+- Enums (enum)
+- Interfaces (interface)
+- Models (class)
