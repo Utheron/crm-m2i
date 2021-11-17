@@ -98,9 +98,13 @@ export class AppComponent {
 
 ### LIFECYCLE
 
+- `ngDoCheck()` passe par tous les lifecycles
+- `ngOnChanges()` ne détecte pas les changements de propriétés mais les changements d'objets
+
 ### TEMPLATES
 
 - `@Input()` pour transmettre des données
+- `@Input()` ne sont détectés qu'à partir de `ngOnChanges()`
 
 ### NOTES
 
