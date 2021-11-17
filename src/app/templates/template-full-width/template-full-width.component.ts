@@ -9,7 +9,7 @@ export class TemplateFullWidthComponent implements OnInit {
   @Input() public title!: string;
 
   constructor() {
-    this.title = 'Le titre est ici';
+    this.title = 'Template fullwidth';
   }
 
   ngOnInit(): void {}
