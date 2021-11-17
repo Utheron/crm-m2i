@@ -96,6 +96,12 @@ export class AppComponent {
 }
 ```
 
+### LIFECYCLE
+
+### TEMPLATES
+
+- `@Input()` pour transmettre des données
+
 ### NOTES
 
 - Le module icons permet de centraliser toutes les icones au même endroit et limiter les imports
