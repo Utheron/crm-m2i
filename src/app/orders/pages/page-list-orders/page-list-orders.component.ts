@@ -8,6 +8,7 @@ import { OrdersService } from '../../services/orders.service';
 })
 export class PageListOrdersComponent implements OnInit {
   public title: string = '[LIST] Orders';
+
   constructor(private ordersService: OrdersService) {
     this.ordersService.collection$.subscribe((data) => {});
   }
