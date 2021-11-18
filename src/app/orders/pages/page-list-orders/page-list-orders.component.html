@@ -4,10 +4,18 @@
       <td>{{ item.typePresta }}</td>
       <td>{{ item.client }}</td>
       <td>{{ item.nbJours }}</td>
-      <td>{{ item.tjmHt }}</td>
-      <td>{{ item | total }}</td>
-      <td>{{ item | total: true }}</td>
-      <td>{{ item.state }}</td>
+      <td>{{ item.tjmHt | currency }}</td>
+      <td>{{ item | total | currency }}</td>
+      <td>{{ item | total: true | currency }}</td>
+      <td>
+        <select class="form-select">
+          <option *ngFor="let state of stateOrder"
+            [value]='state'
+            [selected]='state === item.state'>
+              {{ state }}
+          </option>
+        </select>
+    </td>
     </tr>
   </app-table-light>
   <app-btn></app-btn>

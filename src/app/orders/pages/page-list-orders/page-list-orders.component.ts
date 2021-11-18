@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+import { StateOrder } from 'src/app/core/enums/state-order';
 import { Order } from 'src/app/core/models/order';
 import { OrdersService } from '../../services/orders.service';
 
@@ -12,6 +13,7 @@ export class PageListOrdersComponent implements OnInit {
   public title: string = '[LIST] Orders';
   public headers!: string[];
   public collection$!: Observable<Order[]>;
+  public stateOrder: string[] = Object.values(StateOrder);
 
   constructor(private ordersService: OrdersService) {
     this.headers = [

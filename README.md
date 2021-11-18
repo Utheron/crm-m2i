@@ -120,6 +120,21 @@ export class AppComponent {
 ### NOTES
 
 - Le module icons permet de centraliser toutes les icones au même endroit et limiter les imports
+- Définir le `LOCALE_ID` pour afficher la bonne currency
+```js
+import { DEFAULT_CURRENCY_CODE, LOCALE_ID, NgModule } from '@angular/core';
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+registerLocaleData(localeFr);
+
+@NgModule({
+  providers: [
+    { provide: LOCALE_ID, useValue: 'fr-FR' },
+    { provide: DEFAULT_CURRENCY_CODE, useValue: 'EUR' },
+  ]
+})
+
+```
 
 ### APPROFONDIR
 
