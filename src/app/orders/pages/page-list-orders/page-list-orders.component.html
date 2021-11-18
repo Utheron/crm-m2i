@@ -7,7 +7,7 @@
       <td>{{ item.tjmHt | currency }}</td>
       <td>{{ item | total | currency }}</td>
       <td>{{ item | total: true | currency }}</td>
-      <td [appState]="item.state">
+      <td>
         <select class="form-select"
           (change)="changeState(item, $event)">
           <option *ngFor="let state of stateOrder"
@@ -19,5 +19,5 @@
     </td>
     </tr>
   </app-table-light>
-  <app-btn></app-btn>
+  <app-btn label="Add an order" route="add"></app-btn>
 </app-template-full-width>

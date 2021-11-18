@@ -6,6 +6,7 @@ import { TableLightComponent } from './components/table-light/table-light.compon
 import { BtnComponent } from './components/btn/btn.component';
 import { TotalPipe } from './pipes/total.pipe';
 import { StateDirective } from './directives/state.directive';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,7 @@ import { StateDirective } from './directives/state.directive';
     TotalPipe,
     StateDirective
   ],
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   exports: [TemplatesModule, IconsModule, TableLightComponent, BtnComponent, TotalPipe, StateDirective],
 })
 export class SharedModule {}
