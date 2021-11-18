@@ -30,4 +30,12 @@ export class PageListOrdersComponent implements OnInit {
   }
 
   ngOnInit(): void {}
+
+  public changeState(item: Order, event: any) {
+    const state = event.target.value;
+
+    this.ordersService.changeState(item, state).subscribe(data => {
+      Object.assign(item, data);
+    });
+  }
 }

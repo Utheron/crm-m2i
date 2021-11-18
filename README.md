@@ -117,6 +117,8 @@ export class AppComponent {
 <app-table-light [headers]="headers" *ngIf="collection$ | async as collection">
 ```
 
+### CUSTOM DIRECTIVE
+
 ### NOTES
 
 - Le module icons permet de centraliser toutes les icones au même endroit et limiter les imports
@@ -135,9 +137,14 @@ registerLocaleData(localeFr);
 })
 
 ```
+- On ne peut pas `*ngFor` sur un `object`, il faudra obligatoirement passer par un `array`
+```js
+public stateOrder: string[] = Object.values(StateOrder);
+```
 
 ### APPROFONDIR
 
 - Enums (enum)
 - Interfaces (interface)
 - Models (class)
+- `Object.assign()`
