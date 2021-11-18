@@ -106,6 +106,17 @@ export class AppComponent {
 - `@Input()` pour transmettre des données
 - `@Input()` ne sont détectés qu'à partir de `ngOnChanges()`
 
+### RxJS FILTERS
+
+- Si l'API retourne une réponse JSON et pas un `objet`, il faudra penser à `pipe()` et `map()` pour transformer la réponse JSON en objet voulu
+
+### UNSUBSCRIBE
+
+- Pipe `async`
+```html
+<app-table-light [headers]="headers" *ngIf="collection$ | async as collection">
+```
+
 ### NOTES
 
 - Le module icons permet de centraliser toutes les icones au même endroit et limiter les imports

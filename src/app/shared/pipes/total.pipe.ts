@@ -4,8 +4,8 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'total',
 })
 export class TotalPipe implements PipeTransform {
-  transform(val: any, tva?: boolean): number {
-    if (tva) return val.totalTTC();
-    return val.totalHT();
+  transform(item: any, tva?: boolean): number {
+    if (tva) return item.totalTTC();
+    return item.totalHT();
   }
 }

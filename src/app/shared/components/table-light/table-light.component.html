@@ -1,7 +1,7 @@
 <table class="table">
   <thead>
     <tr>
-      <th *ngFor="let item of headers" scope="col">{{ item }}</th>
+      <th *ngFor="let item of headers" scope="col">{{ item | uppercase }}</th>
     </tr>
   </thead>
   <tbody>
