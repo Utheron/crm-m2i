@@ -6,17 +6,16 @@ import { Order } from 'src/app/core/models/order';
 @Component({
   selector: 'app-form-order',
   templateUrl: './form-order.component.html',
-  styleUrls: ['./form-order.component.scss']
+  styleUrls: ['./form-order.component.scss'],
 })
 export class FormOrderComponent implements OnInit {
   @Input() init!: Order;
-
   @Output() submitted = new EventEmitter<Order>();
 
   public states = Object.values(StateOrder);
   public form!: FormGroup;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
     this.form = this.fb.group({
@@ -25,16 +24,16 @@ export class FormOrderComponent implements OnInit {
       tva: [this.init.tva],
       state: [this.init.state],
       typePresta: [this.init.typePresta, Validators.required],
-      client: [this.init.client, [Validators.required, Validators.minLength(2)]],
+      client: [
+        this.init.client,
+        [Validators.required, Validators.minLength(2)],
+      ],
       comment: [this.init.comment],
       id: [this.init.id],
     });
-    console.log(this.form.value);
-
   }
 
-public onSubmit(): void{
-    console.log(this.form.value);
+  public onSubmit(): void {
     this.submitted.emit(this.form.value);
-}
+  }
 }

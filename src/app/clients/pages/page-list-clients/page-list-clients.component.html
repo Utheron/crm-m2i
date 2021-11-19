@@ -5,12 +5,9 @@
       <td>{{ item.totalCaHt | currency }}</td>
       <td>{{ item | total : true | currency }}</td>
       <td>
-        <select class="form-select"
-          (change)="changeState(item, $event)">
-          <option *ngFor="let state of stateClient"
-            [value]='state'
-            [selected]='state === item.state'>
-              {{ state }}
+        <select class="form-select" (change)="changeState(item, $event)">
+          <option *ngFor="let state of stateClient" [value]='state' [selected]='state === item.state'>
+            {{ state }}
           </option>
         </select>
       </td>

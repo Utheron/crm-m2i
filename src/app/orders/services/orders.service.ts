@@ -15,28 +15,33 @@ export class OrdersService {
 
   constructor(private http: HttpClient) {
     this.collection$ = this.http.get<Order[]>(`${this.urlApi}/orders`).pipe(
-      map(response => {
-        return response.map(obj => {
+      map((response) => {
+        return response.map((obj) => {
           return new Order(obj);
-        })
+        });
       })
     );
   }
 
-  // change state item
-  public changeState(item: Order, state: StateOrder): Observable<Order> {
-    const obj = new Order({...item});
-    obj.state = state;
-    return this.update(obj);
+  public add(item: Order): Observable<Order> {
+    return this.http.post<Order>(`${this.urlApi}/orders`, item);
   }
 
-  // update item in collection
   public update(item: Order): Observable<Order> {
     return this.http.put<Order>(`${this.urlApi}/orders/${item.id}`, item);
   }
 
-  // add item
-  public add(item: Order): Observable<any> {
-    return this.http.post<any>(`${this.urlApi}/orders`, item);
+  public delete(id: number) {
+    return this.http.delete<Order>(`${this.urlApi}/orders/${id}`);
+  }
+
+  public changeState(item: Order, state: StateOrder): Observable<Order> {
+    const obj = new Order({ ...item });
+    obj.state = state;
+    return this.update(obj);
+  }
+
+  public getItemById(id: number) {
+    return this.http.get<Order>(`${this.urlApi}/orders/${id}`);
   }
 }

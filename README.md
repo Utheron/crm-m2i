@@ -113,8 +113,12 @@ export class AppComponent {
 ### UNSUBSCRIBE
 
 - Pipe `async`
+
 ```html
-<app-table-light [headers]="headers" *ngIf="collection$ | async as collection">
+<app-table-light
+  [headers]="headers"
+  *ngIf="collection$ | async as collection"
+></app-table-light>
 ```
 
 ### CUSTOM DIRECTIVE
@@ -123,6 +127,7 @@ export class AppComponent {
 
 - Le module icons permet de centraliser toutes les icones au même endroit et limiter les imports
 - Définir le `LOCALE_ID` pour afficher la bonne currency
+
 ```js
 import { DEFAULT_CURRENCY_CODE, LOCALE_ID, NgModule } from '@angular/core';
 import { registerLocaleData } from '@angular/common';
@@ -137,10 +142,19 @@ registerLocaleData(localeFr);
 })
 
 ```
+
 - On ne peut pas `*ngFor` sur un `object`, il faudra obligatoirement passer par un `array`
+
 ```js
 public stateOrder: string[] = Object.values(StateOrder);
 ```
+
+- Output eventemitter
+- routerNavigate
+- form validators
+- edit item: ActivatedRoute, getItemById(), item$
+- delete item: update collection without page reload
+- possibilité de poursuivre la formation angular avancée 3j (passer par coderbase/dylan)
 
 ### APPROFONDIR
 
@@ -148,3 +162,4 @@ public stateOrder: string[] = Object.values(StateOrder);
 - Interfaces (interface)
 - Models (class)
 - `Object.assign()`
+- Global subscribe error handling

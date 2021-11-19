@@ -1,15 +1,18 @@
-<form [formGroup]="form" (ngSubmit)="onSubmit()">
+<form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
   <div class="form-group">
     <label for="typePresta">Type</label>
-    <input type="text" class="form-control" [ngClass]="{'is-invalid' : form.controls['typePresta'].invalid && form.controls['typePresta'].touched}" id="typePresta" formControlName="typePresta">
-    <div class="invalid-feedback"
-      *ngIf="form.controls['typePresta'].invalid && form.controls['typePresta'].touched">
-        Champ obligatoire
+    <input type="text" class="form-control"
+      [ngClass]="{'is-invalid' : form.controls['typePresta'].invalid && form.controls['typePresta'].touched}"
+      id="typePresta" formControlName="typePresta">
+    <div class="invalid-feedback" *ngIf="form.controls['typePresta'].invalid && form.controls['typePresta'].touched">
+      Champ obligatoire
     </div>
   </div>
   <div class="form-group">
     <label for="client">Client</label>
-    <input type="text" class="form-control" [ngClass]="{'is-invalid' : form.controls['client'].invalid && form.controls['client'].touched}" id="client" formControlName="client">
+    <input type="text" class="form-control"
+      [ngClass]="{'is-invalid' : form.controls['client'].invalid && form.controls['client'].touched}" id="client"
+      formControlName="client">
     <div class="invalid-feedback"
       *ngIf="{'is-invalid' : form.controls['client'].invalid && form.controls['client'].touched}">
       Veuillez saisir au moins 3 caractères
@@ -30,7 +33,7 @@
   <div class="form-group">
     <label for="state">State</label>
     <select class="form-control" id="state" formControlName="state">
-      <option  [disabled]="form.invalid"*ngFor="let state of states" [ngValue]="state">{{ state }}</option>
+      <option [disabled]="form.invalid" *ngFor="let state of states" [ngValue]="state">{{ state }}</option>
     </select>
   </div>
   <div class="form-group">
